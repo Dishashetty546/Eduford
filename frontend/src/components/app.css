@@ -62,7 +62,7 @@ ul li {
     background-color: #0056b3;
 }
 
-/*LOGIN*/
+/*LOGIN  and  /*SIGNUP*/
 
 .Wrapper {
     font-family: 'Courier New', Courier, monospace;
@@ -210,6 +210,51 @@ p {
     text-decoration: underline; /* Add hover effect for better UX */
   }
 
-  /*SIGNUP*/
+ /* DASHBOARD - 1 SIDEBAR */
 
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:2.3rem;
+    height:94vh;
+    background-color: #304a65;
+
+}
+.logo{
+    text-align:center;
+    padding:20px;
+    color:rgb(205, 207, 207);
+    align-items: center;
+    gap:20px;
+    display: flex;
+}
+.logo .icon{
+    font-size: 1.4rem;
+    color: #fff;
+}
+.menu--list{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    color: aliceblue;
+}
+.menu--list .item{
+    display: flex;
+    align-items: center;
+    gap:20px;
+ 
+    font-size: 1.1rem;
+    text-decoration:none;
+    font-weight:600;
+    padding:10px;
+    border-radius:10px;
+    transition: 0.3s ease-in-out;
+    color:#333;
+}
+
+.menu--list .item:hover{
+    background-color: #fff;
+    color:rgb(101, 107, 107);
+
+}
  

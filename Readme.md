@@ -17,4 +17,8 @@ cors: Enables Cross-Origin Resource Sharing, allowing your API to be accessed fr
 step 2 - Design HOME page - new feature toggle effect - Done ////
 Login and sign-up page - JWT TOKEN - Done ////
 
-step 3 - Designing user-friendly home,Login, signup page
+step 3 - Designing user-friendly Login, signup page ////
+
+step 4 - Dashboard features setup and ideation ///
+
+step 5 - Dashboard - feature 1 - Sidebar setup

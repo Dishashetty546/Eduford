@@ -16,7 +16,7 @@ const Login = () => {
     try {
       const response = await axios.post("http://localhost:3000/", { email, password });
       if (response.data === "exist") {
-        navigate("/home", { state: { id: email } });
+        navigate("/dashboard", { state: { id: email } });
       } else if (response.data === "not exist") {
         alert("User has not signed up");
       }
