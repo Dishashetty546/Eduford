@@ -1,5 +1,5 @@
 const express = require("express");
-const collection = require("./mongo");
+const collection = require("./models/Login");
 const cors = require("cors");
 const app = express();
 app.use(express.json());
@@ -12,5 +12,36 @@ app.post("/", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-  } catch {}
+    const check = await collection.findOne({ email: email });
+    if (check) {
+      res.json("exist");
+    } else {
+      res.json("not exist");
+    }
+  } catch (e) {
+    res.json("not exist");
+  }
+});
+app.post("/signup", async (req, res) => {
+  const { email, password } = req.body;
+
+  const data = {
+    email: email,
+    password: password,
+  };
+
+  try {
+    const check = await collection.findOne({ email: email });
+    if (check) {
+      res.json("exist");
+    } else {
+      res.json("not exist");
+      await collection.insertMany([data]);
+    }
+  } catch (e) {
+    res.json("not exist");
+  }
+});
+app.listen(3000, () => {
+  console.log("port connected");
 });

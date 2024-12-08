@@ -1,6 +1,6 @@
 steps
 
-step 1 - done
+step 1 - done ///////
 download dependencies
 Frontend: react, axios, react-router-dom, redux (if needed), material-ui or tailwind for UI.
 Backend: express, mongoose, cors, nodemon, dotenv, jsonwebtoken, bcryptjs.
@@ -14,7 +14,7 @@ mongoose: Provides schema-based solutions for interacting with MongoDB.
 joi: Validates incoming data, ensuring it meets your application's requirements.
 cors: Enables Cross-Origin Resource Sharing, allowing your API to be accessed from different domains.
 
-step 2 - Design HOME page - new feature toggle effect
-Login and sign-up page - JWT TOKEN
+step 2 - Design HOME page - new feature toggle effect - Done ////
+Login and sign-up page - JWT TOKEN - Done ////
 
-step 3 - Dashboard/ Leaderboard
+step 3 - Designing user-friendly home,Login, signup page

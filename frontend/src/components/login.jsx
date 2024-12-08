@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import './Navbar.css';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     try {
       const response = await axios.post("http://localhost:3000/", { email, password });
-      console.log("Login successful:", response.data);
-      navigate('/dashboard'); 
+      if (response.data === "exist") {
+        navigate("/home", { state: { id: email } });
+      } else if (response.data === "not exist") {
+        alert("User has not signed up");
+      }
     } catch (error) {
-      console.error("Login failed:", error.response ? error.response.data : error.message);
+      alert("Wrong details");
+      console.log("Error during login:", error.response ? error.response.data : error.message);
     }
   };
 
   return (
+    <div className='Wrapper'>
     <div className="login">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
@@ -43,6 +48,7 @@ const Login = () => {
       <p>OR</p>
       <br />
       <Link to="/signup">Sign up here</Link>
+    </div>
     </div>
   );
 };

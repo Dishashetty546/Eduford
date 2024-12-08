@@ -2,25 +2,29 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
-const signup = () => {
+const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     try {
       const response = await axios.post("http://localhost:3000/signup", { email, password });
-      console.log("Login successful:", response.data);
-      navigate('/dashboard'); 
+      if (response.data === "exist") {
+        alert("User already exists");
+      } else if (response.data === "not exist") {
+        navigate("/home", { state: { id: email } });
+      }
     } catch (error) {
-      console.error("Login failed:", error.response ? error.response.data : error.message);
+      alert("Signup failed. Please try again.");
+      console.error("Signup failed:", error.response ? error.response.data : error.message);
     }
   };
 
   return (
-    <div className="login">
+    <div className="signup">
       <h1>Signup</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -37,14 +41,14 @@ const signup = () => {
           placeholder="Password"
           required
         />
-        <input type="submit" value="Login" />
+        <input type="submit" value="Sign Up" />
       </form>
       <br />
       <p>OR</p>
       <br />
-      <Link to="/signup">Login page</Link>
+      <Link to="/login">Login page</Link>
     </div>
-  );
+  );  
 };
 
-export default signup;
+export default Signup;
