@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import './Navbar.css';
+import {FaLock, FaUser} from "react-icons/fa";
+import background from '../assets/background.png'
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -24,30 +27,45 @@ const Login = () => {
   };
 
   return (
-    <div className='Wrapper'>
+    <div className='Wrapper' style={{
+      backgroundImage: `url(${background})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}>
     <div className="login">
+
+  
+      <form  className=" form-box" onSubmit={handleSubmit}>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input
+        <input className='input-box'
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           required
+        
         />
+          <FaUser className='icon'/>
         <input
+        className='input-box'
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           required
         />
-        <input type="submit" value="Login" />
-      </form>
-      <br />
+        <FaLock className='icon'/>
+        <div className='remember-forgot'> 
+          <label> <input type="checkbox"/>Remember me</label>
+          <a href="#">Forgot Password</a>
+        </div>
+        <button>Login</button>
       <p>OR</p>
-      <br />
-      <Link to="/signup">Sign up here</Link>
+      <div className='register-link'>
+        <p>Don't have an account?</p>
+      </div>
+     <Link className="signup" to="/signup">Sign up here</Link>
+      </form>
     </div>
     </div>
   );
