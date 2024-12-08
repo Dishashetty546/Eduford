@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import './app.css';
 import logo_light from '../../src/assets/logo-black.png';
 import logo_dark from '../../src/assets/logo-white.png';
 import toggle_light from '../../src/assets/night.png';

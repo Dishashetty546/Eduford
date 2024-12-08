@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import './Navbar.css';
+import './app.css';
 import {FaLock, FaUser} from "react-icons/fa";
 import background from '../assets/background.png'
 
