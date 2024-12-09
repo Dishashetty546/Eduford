@@ -21,4 +21,4 @@ step 3 - Designing user-friendly Login, signup page ////
 
 step 4 - Dashboard features setup and ideation ///
 
-step 5 - Dashboard - feature 1 - Sidebar setup
+step 5 - Dashboard - feature 1 - Sidebar setup   ///

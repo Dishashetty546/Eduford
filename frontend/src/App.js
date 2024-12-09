@@ -6,6 +6,7 @@ import Login from "./components/login";
 import Signup from "./components/signup";
 import Dashboard from "./components/dashboard";
 import Sidebar from "./components/sidebar";
+import Profile from "./components/profile";
 function App() {
   const [theme, settheme] = useState("light");
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sidebar" element={<Sidebar />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     </Router>

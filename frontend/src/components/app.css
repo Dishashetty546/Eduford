@@ -210,51 +210,166 @@ p {
     text-decoration: underline; /* Add hover effect for better UX */
   }
 
- /* DASHBOARD - 1 SIDEBAR */
+/* DASHBOARD CONTAINER */
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
 
-.menu{
-    display:flex;
-    flex-direction:column;
-    gap:2.3rem;
-    height:94vh;
+/* SIDEBAR */
+.menu {
+    width: 250px; /* Fixed width for sidebar */
     background-color: #304a65;
-
-}
-.logo{
-    text-align:center;
-    padding:20px;
-    color:rgb(205, 207, 207);
-    align-items: center;
-    gap:20px;
+    height: 100vh;
     display: flex;
-}
-.logo .icon{
-    font-size: 1.4rem;
-    color: #fff;
-}
-.menu--list{
-    display:flex;
     flex-direction: column;
-    gap:20px;
-    color: aliceblue;
+    gap: 2.3rem;
+    padding: 20px;
+    position: fixed; /* Ensure sidebar stays fixed */
 }
-.menu--list .item{
+
+/* LOGO AND MENU ITEMS */
+.logo {
+    text-align: center;
+    color: rgb(205, 207, 207);
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.4rem;
+}
+
+.menu--list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu--list .item {
+    font-size: 1.1rem;
+    padding: 10px;
+    color: aliceblue;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.menu--list .item:hover {
+    background-color: #fff;
+    color: rgb(101, 107, 107);
+}
+/* DASHBOARD CONTAINER */
+.dashboard {
+    display: flex;
+    height: 100vh; /* Full screen height */
+}
+
+/* SIDEBAR */
+.menu {
+    width: 250px; /* Fixed width for sidebar */
+    background-color: #304a65;
+    height: 100vh; /* Full height to cover the page */
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
+    padding: 20px;
+    position: fixed; /* Sidebar stays fixed */
+    top: 0;
+    left: 0; /* Position the sidebar at the left */
+}
+
+/* LOGO AND MENU ITEMS */
+.logo {
+    text-align: center;
+    color: rgb(205, 207, 207);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.4rem;
+}
+
+.menu--list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu--list .item {
+    font-size: 1.1rem;
+    padding: 10px;
+    color: aliceblue;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.menu--list .item:hover {
+    background-color: #fff;
+    color: rgb(101, 107, 107);
+}
+
+/* MAIN CONTENT AREA (Filling the remaining space after the sidebar) */
+.dashboard--content {
+    height:fit-content;
+    
+    background: #b3b6c6;
+    flex: 1; /* Takes the remaining space */
+    margin-left: 250px; /* Leaves space for the sidebar */
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    height: 100vh; /* Ensures content covers the full height */
+    overflow-y: auto; /* Allows scrolling within the content area */
+}
+
+/*CONTENTS*/
+.contents{
+    width:75%;
+}
+.content-header{
+    
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.content-title{
+    padding:2px;
+    font-weight: bold;
+    font-size: large;
+
+    color:#0056b3
+}
+.header-activity{
+    display:flex;
     align-items: center;
     gap:20px;
- 
-    font-size: 1.1rem;
-    text-decoration:none;
-    font-weight:600;
-    padding:10px;
+}
+.search-box{
+    background: #e3d4d4;
+    padding:8px 10px;
     border-radius:10px;
-    transition: 0.3s ease-in-out;
-    color:#333;
+    display: flex;
+    align-items: center;
 }
-
-.menu--list .item:hover{
-    background-color: #fff;
-    color:rgb(101, 107, 107);
-
+.search-box input{
+    border:none;
+    outline:none;
+    background: transparent;
+    padding:5px;
+    outline:none;
 }
- 
+.search-box .icon{
+    color: #0056b3;
+    font-size:22px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+.notify{
+    padding:0.1px;
+    border-radius:10px;
+    color: rgb(7, 28, 28);
+    align-items: center;
+    justify-content: center;
+}
