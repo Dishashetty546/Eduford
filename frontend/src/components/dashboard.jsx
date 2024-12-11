@@ -6,6 +6,7 @@ import './app.css'
 import Content from '../components/contents'
 import Profile from '../components/profile';
 
+
 const dashboard = () => {
   return (
     <div>

@@ -7,6 +7,7 @@ import Signup from "./components/signup";
 import Dashboard from "./components/dashboard";
 import Sidebar from "./components/sidebar";
 import Profile from "./components/profile";
+import Testpage from "./components/testpage";
 function App() {
   const [theme, settheme] = useState("light");
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/testpage" element={<Testpage />} />
         </Routes>
       </div>
     </Router>

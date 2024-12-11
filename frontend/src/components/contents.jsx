@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';  // Import Link for navigation
 import { BiNotification, BiSearch, BiLogoHtml5, BiLogoAndroid, BiBuilding } from 'react-icons/bi';
-import './app.css'; // Ensure you add styles here.
+import './app.css'; 
 
 const Contents = () => {
   const courses = [
@@ -8,16 +9,19 @@ const Contents = () => {
       title: 'Web Development',
       duration: '30 min',
       icon: <BiLogoHtml5 />,
+      path: '/testpage',
     },
     {
       title: 'DSA and DAA',
       duration: '45 min',
       icon: <BiLogoAndroid />,
+      path: '/testpage',
     },
     {
       title: 'Aptitude',
       duration: '20 min',
       icon: <BiBuilding />,
+      path: '/testpage',
     },
   ];
 
@@ -40,13 +44,15 @@ const Contents = () => {
       {/* Content Cards */}
       <div className="cart-container">
         {courses.map((item, index) => (
-          <div className="card" key={index}>
-            <div className="card-cover">{item.icon}</div>
-            <div className="card-details">
-              <h2 className="card-title">{item.title}</h2>
-              <p className="card-duration">{item.duration}</p>
+          <Link to={item.path} key={index}> {/* Wrap each card in Link */}
+            <div className="card">
+              <div className="card-cover">{item.icon}</div>
+              <div className="card-details">
+                <h2 className="card-title">{item.title}</h2>
+                <p className="card-duration">{item.duration}</p>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
