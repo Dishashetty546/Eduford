@@ -1,10 +1,12 @@
 const express = require("express");
 const collection = require("./models/Login");
+const feedbackRoutes = require("./models/feedback");
 const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use("/feedback", feedbackRoutes);
 
 app.get("/", cors(), (req, res) => {});
 

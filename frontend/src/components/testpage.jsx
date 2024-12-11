@@ -5,6 +5,7 @@ function Interview() {
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(null);
+  const [feedback, setFeedback] = useState('');
 
   // Fetch questions on component mount
   useEffect(() => {
@@ -30,7 +31,12 @@ function Interview() {
   };
 
   const handleSubmit = () => {
-    fetch('http://localhost:5000/submit-answers', {
+    if (answers.length !== questions.length || answers.includes(undefined)) {
+      alert('Please answer all the questions!');
+      return;
+    }
+  
+    fetch('http://localhost:5000/feedback', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -38,13 +44,16 @@ function Interview() {
       body: JSON.stringify({ answers }),
     })
       .then(response => response.json())
-      .then(data => setScore(data.score))
+      .then(data => {
+        setScore(data.score);
+        setFeedback(data.feedback); // Add feedback handling
+      })
       .catch(error => console.error('Error submitting answers:', error));
   };
 
   return (
-    <div>
-      <h1>Mock Interview</h1>
+    <div className='test-page'>
+      <h1> Mock Interview</h1>
       {/* Check if questions exist and are an array */}
       {questions && Array.isArray(questions) && questions.length > 0 ? (
         questions.map((q, index) => (
@@ -89,7 +98,12 @@ function Interview() {
         <p>Loading questions...</p>
       )}
       <button onClick={handleSubmit}>Submit</button>
-      {score !== null && <p>Your score is: {score}</p>}
+      {score !== null && (
+  <>
+    <p>Your score is: {score}</p>
+    <p>Feedback: {feedback}</p>
+  </>
+)}
     </div>
   );
 }

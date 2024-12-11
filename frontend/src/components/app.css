@@ -421,48 +421,82 @@ p {
 }
 /* Test page css*/
 
-/* Test Page CSS */
-.test-page {
-    width: 100%;
-    padding: 20px;
-    background-color: #f4f4f4;
-}
-
-.test-page h1 {
-    text-align: center;
-    font-size: 32px;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .test-page {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+  }
+  
+  .test-page h1 {
+    font-size: 24px;
+    font-weight: 500;
     color: #333;
+    text-align: center;
     margin-bottom: 20px;
-}
-
-.test-page .card-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.test-page .test-card {
-    width: 250px;
-    height: 150px;
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-.test-page .test-card:hover {
-    transform: scale(1.05);
-}
-
-.test-page .test-card .title {
-    font-size: 20px;
-    color: #333;
+  }
+  
+  .test-page h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #444;
     margin-bottom: 10px;
-}
-
-.test-page .test-card .description {
-    font-size: 14px;
-    color: #777;
-}
+  }
+  
+  .test-page p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .test-page .question {
+    margin-bottom: 20px;
+  }
+  
+  .test-page .options {
+    margin: 10px 0;
+  }
+  
+  .test-page .options input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .test-page .options label {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .test-page button {
+    display: block;
+    width: 100%;
+    background-color: #4285f4;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .test-page button:hover {
+    background-color: #357ae8;
+  }
+  
+  .test-page .score {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: #444;
+    margin-top: 20px;
+  }
+  
