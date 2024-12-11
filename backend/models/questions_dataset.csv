@@ -1,4 +1,4 @@
-topic,question,option_a,option_b,option_c,option_d,correct_answer,difficulty,explanation
+Topic,Question,Option A,Option B,Option C,Option D,Correct Answer,Difficulty,Explanation
 Arrays,What is the time complexity of searching for an element in an unsorted array?,O(1),O(log n),O(n),O(n^2),C,Easy,"In the worst case, you might have to search through the entire array to find the element, which takes O(n) time."
 Strings,Which of the following methods is used to compare two strings in Java?,compare(),equals(),compareTo(),Both B and C,D,Medium,"In Java, equals() checks for content equality, while compareTo() compares lexicographically."
 Sorting,What is the best case time complexity of QuickSort?,O(n^2),O(n log n),O(n),O(log n),B,Hard,"In the best case, QuickSort partitions the array into two equal halves, resulting in O(n log n) complexity."

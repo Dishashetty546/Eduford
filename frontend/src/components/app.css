@@ -419,3 +419,50 @@ p {
     transform: scale(1.1); /* Slight enlargement on hover */
     cursor: pointer;
 }
+/* Test page css*/
+
+/* Test Page CSS */
+.test-page {
+    width: 100%;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.test-page h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.test-page .card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.test-page .test-card {
+    width: 250px;
+    height: 150px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.test-page .test-card:hover {
+    transform: scale(1.05);
+}
+
+.test-page .test-card .title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.test-page .test-card .description {
+    font-size: 14px;
+    color: #777;
+}
