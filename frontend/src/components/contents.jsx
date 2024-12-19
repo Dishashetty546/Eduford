@@ -5,24 +5,24 @@ import './app.css';
 
 const Contents = () => {
   const courses = [
-    {
-      title: 'Web Development',
-      duration: '30 min',
-      icon: <BiLogoHtml5 />,
-      path: '/testpage',
-    },
+    // {
+    //   title: 'Web Development',
+    //   duration: '30 min',
+    //   icon: <BiLogoHtml5 />,
+    //   path: '/testpage',
+    // },
     {
       title: 'DSA and DAA',
       duration: '45 min',
       icon: <BiLogoAndroid />,
       path: '/testpage',
     },
-    {
-      title: 'Aptitude',
-      duration: '20 min',
-      icon: <BiBuilding />,
-      path: '/testpage',
-    },
+    // {
+    //   title: 'Aptitude',
+    //   duration: '20 min',
+    //   icon: <BiBuilding />,
+    //   path: '/testpage',
+    // },
   ];
 
   return (

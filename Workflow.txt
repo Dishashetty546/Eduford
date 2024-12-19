@@ -8,7 +8,7 @@ steps
             
              //ML dev//
              collect perfect dataset for this project - kaggle etc
-             Data processing
+             Data pjrocessing
              Model selection
              Train the model
              perform analysis

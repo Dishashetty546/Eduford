@@ -1,29 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './app.css';
-import logo_light from '../../src/assets/logo-black.png';
-import logo_dark from '../../src/assets/logo-white.png';
-import toggle_light from '../../src/assets/night.png';
-import toggle_dark from '../../src/assets/day.png';
+import logo_dark from '../../src/assets/logo-white.png';  // Dark mode logo (white logo)
+import toggle_dark from '../../src/assets/day.png';      // Dark mode toggle (moon icon)
 
-const Navbar = ({ theme, settheme }) => {
-  const toggle_mode = () => {
-    theme === "light" ? settheme("dark") : settheme("light");
-  };
-
+const Navbar = () => {
   return (
-    <div className="navbar">
-      <img src={theme === "light" ? logo_light : logo_dark} alt="" className="logo" />
+    <div className="navbar dark">
+      {/* Display dark mode logo */}
+      <img src={logo_dark} alt="Logo" className="logo" />
       <ul>
+        <li><a href="#feature1">Services</a></li>
+        <li><a href="#feature2">About us</a></li>
         <li>Home</li>
-        <li>About us</li>
-        <li>Services</li>
       </ul>
       <Link to="/login" className="button">Login</Link>
+      {/* Dark mode toggle icon */}
       <img
-        onClick={toggle_mode}
-        src={theme === "light" ? toggle_light : toggle_dark}
-        alt=""
+        src={toggle_dark}
+        alt="Toggle Theme"
         className="toggle-icon"
       />
     </div>

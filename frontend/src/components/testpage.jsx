@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom'; 
 import './app.css';
+
 function Interview() {
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
@@ -12,7 +12,6 @@ function Interview() {
     fetch('http://localhost:5000/questions')
       .then(response => response.json())
       .then(data => {
-        console.log("Received data:", data);  // Check the structure of data
         if (data && data.questions) {
           setQuestions(data.questions);
         } else {
@@ -35,8 +34,8 @@ function Interview() {
       alert('Please answer all the questions!');
       return;
     }
-  
-    fetch('http://localhost:5000/feedback', {
+
+    fetch('http://localhost:5000/submitted-answers', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,45 +51,48 @@ function Interview() {
   };
 
   return (
-    <div className='test-page'>
-      <h1> Mock Interview</h1>
-      {/* Check if questions exist and are an array */}
+    <div className="test-page">
+      <h1>Mock Interview</h1>
       {questions && Array.isArray(questions) && questions.length > 0 ? (
         questions.map((q, index) => (
-          <div key={index}>
+          <div key={index} className="question">
             <h3>{q.Topic}</h3>
             <p>{q.Question}</p>
-            <div>
+            <div className="options">
               <input
                 type="radio"
                 name={`question-${index}`}
                 value="A"
                 onChange={() => handleAnswerChange(index, 'A')}
-              /> {q['Option A']}
+              />
+              <label>{q['Option A']}</label>
             </div>
-            <div>
+            <div className="options">
               <input
                 type="radio"
                 name={`question-${index}`}
                 value="B"
                 onChange={() => handleAnswerChange(index, 'B')}
-              /> {q['Option B']}
+              />
+              <label>{q['Option B']}</label>
             </div>
-            <div>
+            <div className="options">
               <input
                 type="radio"
                 name={`question-${index}`}
                 value="C"
                 onChange={() => handleAnswerChange(index, 'C')}
-              /> {q['Option C']}
+              />
+              <label>{q['Option C']}</label>
             </div>
-            <div>
+            <div className="options">
               <input
                 type="radio"
                 name={`question-${index}`}
                 value="D"
                 onChange={() => handleAnswerChange(index, 'D')}
-              /> {q['Option D']}
+              />
+              <label>{q['Option D']}</label>
             </div>
           </div>
         ))
@@ -99,11 +101,11 @@ function Interview() {
       )}
       <button onClick={handleSubmit}>Submit</button>
       {score !== null && (
-  <>
-    <p>Your score is: {score}</p>
-    <p>Feedback: {feedback}</p>
-  </>
-)}
+        <>
+          <div className="score">Your score is: {score}</div>
+          <div className="feedback">Feedback: {feedback}</div>
+        </>
+      )}
     </div>
   );
 }
